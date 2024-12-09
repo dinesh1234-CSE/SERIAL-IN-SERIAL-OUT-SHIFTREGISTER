@@ -49,8 +49,31 @@ Out (SISO) Shift Register.
 
 /* Program for flipflops and verify its truth table in quartus using Verilog programming.
 
-![Screenshot 2024-12-04 153031](https://github.com/user-attachments/assets/07674003-80bd-4b24-9378-f876c92c3504)
+module serial(clk, sin, q);
 
+input clk;
+
+input sin;
+
+output [3:0] q;
+
+reg [3:0] q;
+
+always @(posedge clk)
+
+begin 
+
+q[0] <= sin;
+
+q[1] <=q[0];
+
+q[2] <=q[1];
+
+q[3] <=q[2];
+
+end
+
+endmodule
 
 Developed by:CH.Dinesh Kumar
 RegisterNumber:24000305*/
